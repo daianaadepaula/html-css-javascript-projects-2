@@ -19,7 +19,22 @@ async function getWeatherData(cityValue){
 		}
 
 		const data = await response.json();
-		console.log(data);
+
+		const temperature = Math.round(data.main.temp);
+		const description = data.weather[0].description;
+		const icon = data.weather[0].icon;
+
+		const details = [
+			`Sensação: ${Math.round(data.main.feels_like)}`,
+			`Umidade: ${data.main.humidity}`,
+			`Vento: ${data.wind.speed}`,
+		];
+
+		weatherDataEl.querySelector(".icon").innerHTML = `<img src="http://openweathermap.org/img/wn/${icon}.png" alt="Ícone do Clima">`;
+		weatherDataEl.querySelector(".temperature").textContent = `${temperature}℃`;
+		weatherDataEl.querySelector(".description").textContent = `${description}`;
+
+
 	} catch (error) {
 		
 	}
