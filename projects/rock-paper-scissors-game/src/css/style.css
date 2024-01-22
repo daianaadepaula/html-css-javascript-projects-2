@@ -42,15 +42,15 @@ button:hover {
   opacity: 0.7;
 }
 
-#rock {
+#pedra {
   background-color: #ff0000;
 }
 
-#paper {
+#papel {
   background-color: #2196f3;
 }
 
-#scissors {
+#tesoura {
   background-color: #4caf50;
 }
 
